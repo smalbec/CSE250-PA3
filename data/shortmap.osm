@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<osm version="0.6" generator="Overpass API 0.7.55.1009 5e627b63">
+<note>The data included in this document is from www.openstreetmap.org. The data is made available under ODbL.</note>
+<meta osm_base="2019-10-25T18:58:02Z"/>
+
+  <bounds minlat="42.8318000" minlon="-78.9197000" maxlat="42.9667000" maxlon="-78.7987000"/>
+
+  <node id="18723547" lat="42.8733890" lon="-79.0000000" version="5" timestamp="2011-08-24T19:36:30Z" changeset="9115762" uid="62654" user="fuego"/>
+  <node id="18758034" lat="42.9581814" lon="-78.9555079" version="4" timestamp="2012-07-18T20:23:41Z" changeset="12296985" uid="722137" user="OSMF Redaction Account"/>
+  <node id="18758037" lat="42.9585031" lon="-78.9556900" version="4" timestamp="2012-07-18T20:23:41Z" changeset="12296985" uid="722137" user="OSMF Redaction Account"/>
+  <node id="111368996" lat="42.9579982" lon="-78.9539887" version="4" timestamp="2012-07-18T20:23:41Z" changeset="12296985" uid="722137" user="OSMF Redaction Account"/>
+  <node id="18758041" lat="42.9589718" lon="-78.9535696" version="4" timestamp="2012-07-18T20:23:41Z" changeset="12296985" uid="722137" user="OSMF Redaction Account"/>
+  <node id="18758044" lat="42.9591393" lon="-78.9532625" version="6" timestamp="2012-07-18T20:23:41Z" changeset="12296985" uid="722137" user="OSMF Redaction Account"/>
+  <node id="18758046" lat="42.9592013" lon="-78.9525125" version="6" timestamp="2012-07-18T20:23:41Z" changeset="12296985" uid="722137" user="OSMF Redaction Account"/>
+  <node id="18758048" lat="42.9593081" lon="-78.9515942" version="6" timestamp="2012-07-18T20:23:41Z" changeset="12296985" uid="722137" user="OSMF Redaction Account"/>
+  <node id="18758049" lat="42.9592453" lon="-78.9504784" version="6" timestamp="2012-07-18T20:23:41Z" changeset="12296985" uid="722137" user="OSMF Redaction Account"/>
+  <node id="111357943" lat="42.9589501" lon="-78.9488218" version="6" timestamp="2012-07-18T20:23:41Z" changeset="12296985" uid="722137" user="OSMF Redaction Account"/>
+  <node id="18758051" lat="42.9586988" lon="-78.9479893" version="6" timestamp="2012-07-18T20:23:41Z" changeset="12296985" uid="722137" user="OSMF Redaction Account"/>
+  <node id="6389187381" lat="42.9572860" lon="-78.9462930" version="1" timestamp="2007-07-17T03:00:46Z" changeset="148749" uid="7412" user="mjulius">
+    <tag k="created_by" v="r_coastlines"/>
+    <tag k="source" v="PGS"/>
+  </node>
+  <node id="18758139" lat="42.8804424" lon="-78.8956050" version="6" timestamp="2018-03-07T03:51:47Z" changeset="56954905" uid="473104" user="AlaskaDave">
+    <tag k="source" v="PGS"/>
+  </node>
+
+   <way id="12287705" version="8" timestamp="2019-02-16T20:17:39Z" changeset="67262304" uid="8107451" user="njtbusfan">
+      <nd ref="111368949"/>
+      <nd ref="111368950"/>
+      <nd ref="111357943"/>
+      <nd ref="111368953"/>
+      <nd ref="111368956"/>
+      <nd ref="938637174"/>
+      <nd ref="3338698003"/>
+      <nd ref="938637175"/>
+      <nd ref="3338697871"/>
+      <nd ref="938637176"/>
+      <nd ref="938637171"/>
+      <tag k="cycleway" v="shared_lane"/>
+      <tag k="highway" v="residential"/>
+      <tag k="maxspeed" v="30 mph"/>
+      <tag k="name" v="Hampshire Street"/>
+      <tag k="tiger:cfcc" v="A41"/>
+      <tag k="tiger:county" v="Erie, NY"/>
+      <tag k="tiger:name_base" v="Hampshire"/>
+      <tag k="tiger:name_type" v="St"/>
+      <tag k="tiger:reviewed" v="no"/>
+      <tag k="tiger:zip_left" v="14213"/>
+      <tag k="tiger:zip_right" v="14213"/>
+    </way>
+    <way id="12287714" version="3" timestamp="2013-04-19T13:31:31Z" changeset="15785382" uid="451693" user="bot-mode">
+      <nd ref="111368992"/>
+      <nd ref="111368994"/>
+      <nd ref="1753209708"/>
+      <nd ref="111368995"/>
+      <nd ref="111368996"/>
+      <nd ref="111368998"/>
+      <nd ref="111369000"/>
+      <nd ref="111369002"/>
+      <nd ref="111369004"/>
+      <nd ref="111369010"/>
+      <nd ref="111369014"/>
+      <nd ref="111369018"/>
+      <tag k="highway" v="residential"/>
+      <tag k="name" v="High Park Boulevard"/>
+      <tag k="oneway" v="yes"/>
+      <tag k="tiger:cfcc" v="A41"/>
+      <tag k="tiger:county" v="Erie, NY"/>
+      <tag k="tiger:name_base" v="High Park"/>
+      <tag k="tiger:name_type" v="Blvd"/>
+      <tag k="tiger:reviewed" v="no"/>
+      <tag k="tiger:zip_left" v="14226"/>
+      <tag k="tiger:zip_right" v="14226"/>
+    </way>
+    <way id="12287823" version="3" timestamp="2019-04-07T16:01:20Z" changeset="68979878" uid="348565" user="jdmonin">
+      <nd ref="111369952"/>
+      <nd ref="6389187381"/>
+      <nd ref="6389187378"/>
+      <nd ref="6389187375"/>
+      <nd ref="111369961"/>
+      <tag k="highway" v="service"/>
+      <tag k="name" v="Byrd Way"/>
+      <tag k="tiger:cfcc" v="A41"/>
+      <tag k="tiger:county" v="Erie, NY"/>
+      <tag k="tiger:name_base" v="Byrd"/>
+      <tag k="tiger:name_type" v="Way"/>
+      <tag k="tiger:reviewed" v="no"/>
+      <tag k="tiger:zip_left" v="14204"/>
+      <tag k="tiger:zip_left_1" v="14204"/>
+      <tag k="tiger:zip_right" v="14204"/>
+      <tag k="tiger:zip_right_1" v="14204"/>
+    </way>
+
+  </osm>

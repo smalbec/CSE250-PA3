@@ -13,23 +13,59 @@
 package cse250.pa3
 
 import cse250.objects.{StreetGraph, TaxEntry}
+import cse250.pa3.MapUtilities
+
 
 object Main {
   def main(args: Array[String]): Unit = {
-    val taxentryFilename = "data/2017-2018_Assessment_Roll-updated-small.csv"
-    val entries = TaxEntry.loadEntries(taxentryFilename, 25)
-    val mapXMLFile = "data/buffalo-map"
-    val intersectionNodeXMLFile = "data/export.osm"
-    val intersectionIDs = MapUtilities.loadIntersectionIDs(intersectionNodeXMLFile)
-    val nodeToStreetMapping = MapUtilities.loadMapInfo(mapXMLFile)
-    val streetGraph = MapUtilities.buildIntersectionGraph(intersectionIDs, nodeToStreetMapping)
-    println(s"${entries(1)} to\n${entries(2)}")
-    println(MapUtilities.computeFewestTurns(streetGraph, entries(1), entries(2)))
-    println(MapUtilities.computeFewestTurnsList(streetGraph, entries(1), entries(2)))
+//    val taxentryFilename = "data/2017-2018_Assessment_Roll-updated-small.csv"
+//    val entries = TaxEntry.loadEntries(taxentryFilename, 25)
+//    val mapXMLFile = "data/buffalo-map"
+//    val intersectionNodeXMLFile = "data/export.osm"
+//    val intersectionIDs = MapUtilities.loadIntersectionIDs(intersectionNodeXMLFile)
+//    val nodeToStreetMapping = MapUtilities.loadMapInfo(mapXMLFile)
+//    val streetGraph = MapUtilities.buildIntersectionGraph(intersectionIDs, nodeToStreetMapping)
+//    println(s"${entries(1)} to\n${entries(2)}")
+//    println(MapUtilities.computeFewestTurns(streetGraph, entries(1), entries(2)))
+//    println(MapUtilities.computeFewestTurnsList(streetGraph, entries(1), entries(2)))
+//
+//    println(s"${entries(3)} to\n${entries(24)}")
+//    println(MapUtilities.computeFewestTurns(streetGraph, entries(3), entries(24)))
+//    println(MapUtilities.computeFewestTurnsList(streetGraph, entries(3), entries(24)))
 
-    println(s"${entries(3)} to\n${entries(24)}")
-    println(MapUtilities.computeFewestTurns(streetGraph, entries(3), entries(24)))
-    println(MapUtilities.computeFewestTurnsList(streetGraph, entries(3), entries(24)))
+
+//    val intersectionNodeXMLFile = "data/short.osm"
+//    val intersectionIDs = MapUtilities.loadIntersectionIDs(intersectionNodeXMLFile)
+//
+//    for(i<- intersectionIDs){
+//      println(i)
+//    }
+
+        val intersectionNodeXMLFile = "data/shortmap.osm"
+        val intersectionIDs = MapUtilities.loadMapInfo(intersectionNodeXMLFile)
+
+        for(i<- intersectionIDs){
+          println(i)
+        }
+
   }
 }
 
+//var base = mutable.Map("" -> "")
+//
+//var name = ArrayBuffer.empty[String]
+//
+//var iter: Seq[String] = Seq()
+//
+//var index = 0
+//
+//for(i <- tag) {
+//  iter = i.map(tag => tag \@ "k")
+//  index = 0
+//  for (j <- iter) {
+//  if (j == "tiger:name_base") {
+//  name += i.map(tag => tag \@ "v")(index)
+//}
+//  index += 1
+//}
+//}

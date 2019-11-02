@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="UTF-8"?><osm version="0.6" generator="Overpass API 0.7.55.7 8b86ff77">
+<note>The data included in this document is from www.openstreetmap.org. The data is made available under ODbL.</note>
+<meta osm_base="2019-10-25T03:33:02Z"/>
+
+  <node id="111296042" lat="42.8309570" lon="-78.8492830"/>
+  <node id="111296048" lat="42.8316410" lon="-78.8468080"/>
+  <node id="279658800" lat="42.8331645" lon="-78.8529137"/>
+  <node id="354586177" lat="42.8337992" lon="-78.8538948"/>
+  <node id="1775731412" lat="42.8393191" lon="-78.8560552"/>
+  <node id="1775731433" lat="42.8393798" lon="-78.8560014"/>
+  <node id="1775735016" lat="42.8363964" lon="-78.8551733">
+    <tag k="highway" v="motorway_junction"/>
+    <tag k="noref" v="yes"/>
+  </node>
+  <node id="353924530" lat="42.8279931" lon="-78.8508791"/>
+  <node id="1015434034" lat="42.8320447" lon="-78.8530174">
+    <tag k="highway" v="motorway_junction"/>
+    <tag k="noref" v="yes"/>
+  </node>
+  <node id="111338702" lat="42.8314829" lon="-78.8525750"/>
+</osm>
