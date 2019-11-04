@@ -126,7 +126,7 @@ object   MapUtilities {
     var pathCount = 0
 
     var queue: mutable.Queue[String] = mutable.Queue()
-    var visit = ArrayBuffer(cur)
+    var visit = Set(cur)
     queue.enqueue(cur)
 
     while(queue.nonEmpty){
@@ -135,22 +135,19 @@ object   MapUtilities {
         return pathCount
       }
       else{
-        for()
+        val neighbors = streetGraph.vertices(cur).edges
+        for(edge<- neighbors){
+            if(!visit.contains(edge.name)){
+            queue.enqueue((edge.name))
+            visit += edge.name
+          }
+        }
       }
     }
-
-    if(cur == dest){return 0}
-    else{
-      for(i<-streetGraph.vertices){
-
-      }
-    }
-
-      return pathCount
+    pathCount
   }
 
   def computeFewestTurnsList(streetGraph: StreetGraph, start: TaxEntry, end: TaxEntry): Seq[String] = {
     List()
   }
 }
-
