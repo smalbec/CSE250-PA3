@@ -21,7 +21,7 @@ package cse250.pa3
 import cse250.objects.{StreetGraph, TaxEntry}
 
 import scala.collection.mutable
-import scala.collection.mutable.ArrayBuffer
+import scala.collection.mutable.{ArrayBuffer, ListBuffer, Map}
 import scala.xml.{NodeSeq, XML}
 
 object   MapUtilities {
@@ -37,95 +37,116 @@ object   MapUtilities {
 
     val xml = XML.loadFile(filename)
 
-    var returnMap = mutable.Map("" -> ArrayBuffer(""))
-
-    val ids =  (xml \ "node").map(node => node \@ "id").to(mutable.Set)
+    var returnMap = mutable.Map("" -> mutable.Set(""))
 
     val way = (xml \\ "way")
 
-    val nd = way.map(way => way \\ "nd")
-
-    val tag = way.map(way => way \\ "tag")
-
-    var ref = ArrayBuffer(ArrayBuffer(""))
-
-    var base = mutable.Map("" -> ArrayBuffer(""))
-
-    var name = ArrayBuffer.empty[String]
+    var name = ""
 
     var iter: Seq[String] = Seq()
+
+    var nodes: mutable.HashSet[String] = mutable.HashSet()
 
     var index = 0
 
     var namescount = 0
 
-    for(i <- tag) {
-      iter = i.map(tag => tag \@ "k")
+    for(i <- way) {
+      val nd = i.map(i => i \\ "nd")(0)
+      val tag = i.map(i => i \\ "tag")(0)
+      iter = tag.map(tag => tag \@ "k")
+      nodes = nd.map(nd => nd \@ "ref").to(mutable.HashSet)
       index = 0
-      for (j <- iter) {
-        if (j == "tiger:name_base") {
-          name += i.map(tag => tag \@ "v")(index)
-          namescount += 1
-        }
-        index += 1
-      }
-    }
-
-    for(i<-nd){
-      ref += i.map(i => i \@ "ref").to(ArrayBuffer)
-    }
-
-    ref.remove(0)
-
-    var repeatedNames = ArrayBuffer("")
-
-
-
-    for(i <- 0 until namescount){
-      if(base.contains(name(i))){
-        repeatedNames = base(name(i)) ++ ref(i)
-        base(name(i)) = repeatedNames
-      }
-      else{base.addOne((name(i) -> ref(i)))}
-
-    }
-
-    var intersections = ArrayBuffer("")
-
-    //i loops through all node id
-    for(i<- ids) {
-      intersections = ArrayBuffer("")
-      // k,v loops through all names and ArrayBuffer of id ref
-      returnMap += (i -> ArrayBuffer(""))
-      for ((k, v) <- base) {
-        if (v.contains(i)) {
-          //j loops through all id ref
-          for(j<-v){
-            if(j == i ){
-              intersections += k
-            }
-
+      if (iter.contains("tiger:name_base")) {
+        for(j<- iter){
+          if (j == "tiger:name_base") {
+            name = tag.map(tag => tag \@ "v")(index)
           }
-          returnMap(i) = intersections
+            index += 1
+        }
+        for(node <- nodes){
+            if(returnMap.contains(node)){
+              returnMap(node) = (returnMap(node) + name)
+            }
+            else{
+              returnMap += (node -> mutable.Set(name))
+            }
+          }
         }
       }
-    }
+
+    returnMap -= ""
 
 
 
-
-    return null
+    return returnMap
 
   }
 
   def buildIntersectionGraph(intersectionIDs: mutable.Set[String],
-                             nodeToStreetMapping: mutable.Map[String, mutable.Set[String]]): StreetGraph = {
+                             nodeToStreetMapping: mutable.Map[String, mutable.Set[String]])
+                                          : StreetGraph = {
     val streetGraph = new StreetGraph
+
+    //    var filteredd = nodeToStreetMapping filterKeys intersectionIDs
+    //
+    //    var filtered = nodeToStreetMapping.view.filterKeys(intersectionIDs)
+
+    var keys = nodeToStreetMapping.keySet intersect intersectionIDs
+
+
+    var tempvertices = scala.collection.Set("")
+
+    for (intersections <- keys) {
+      if (nodeToStreetMapping(intersections).size != 1) {
+        for (vertices <- nodeToStreetMapping(intersections)) {
+          tempvertices = nodeToStreetMapping(intersections).filter(_ != vertices)
+          tempvertices.foreach(vertex => streetGraph.insertEdge(vertex.toUpperCase(), vertices.toUpperCase))
+          //streetGraph.insertVertex(vertices)
+        }
+      }
+    }
+
+    //      for((k,v)<- streetGraph.vertices){
+    //        tempvertices = streetGraph.vertices.keySet.filter(_ != k)
+    //        for(i<-tempvertices){
+    //          streetGraph.insertEdge(k,i)
+    //        }
+    //      }
+    //    }
+
     streetGraph
   }
 
   def computeFewestTurns(streetGraph: StreetGraph, start: TaxEntry, end: TaxEntry): Int = {
-    -1
+
+    val cur = start.infoMap("STREET")
+    val dest = end.infoMap("STREET")
+
+    var pathCount = 0
+
+    var queue: mutable.Queue[String] = mutable.Queue()
+    var visit = ArrayBuffer(cur)
+    queue.enqueue(cur)
+
+    while(queue.nonEmpty){
+      val current = queue.dequeue()
+      if(current == dest){
+        return pathCount
+      }
+      else{
+        for()
+      }
+    }
+
+    if(cur == dest){return 0}
+    else{
+      for(i<-streetGraph.vertices){
+
+      }
+    }
+
+      return pathCount
   }
 
   def computeFewestTurnsList(streetGraph: StreetGraph, start: TaxEntry, end: TaxEntry): Seq[String] = {

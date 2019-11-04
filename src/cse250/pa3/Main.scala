@@ -34,19 +34,15 @@ object Main {
 //    println(MapUtilities.computeFewestTurnsList(streetGraph, entries(3), entries(24)))
 
 
-//    val intersectionNodeXMLFile = "data/short.osm"
-//    val intersectionIDs = MapUtilities.loadIntersectionIDs(intersectionNodeXMLFile)
-//
-//    for(i<- intersectionIDs){
-//      println(i)
-//    }
-
-        val intersectionNodeXMLFile = "data/shortmap.osm"
-        val intersectionIDs = MapUtilities.loadMapInfo(intersectionNodeXMLFile)
-
-        for(i<- intersectionIDs){
-          println(i)
-        }
+    val taxentryFilename = "data/2017-2018_Assessment_Roll-updated-smallo.csv"
+    val entries = TaxEntry.loadEntries(taxentryFilename, 5)
+    val mapXMLFile = "data/shortmap.osm"
+    val intersectionNodeXMLFile = "data/shorti.map"
+    val intersectionIDs = MapUtilities.loadIntersectionIDs(intersectionNodeXMLFile)
+    val nodeToStreetMapping = MapUtilities.loadMapInfo(mapXMLFile)
+    val streetGraph = MapUtilities.buildIntersectionGraph(intersectionIDs, nodeToStreetMapping)
+    println(s"${entries(1)} to\n${entries(2)}")
+    println(MapUtilities.computeFewestTurns(streetGraph, entries(1), entries(2)))
 
   }
 }
