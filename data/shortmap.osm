@@ -10,14 +10,15 @@
      <node id="1753209708" lat="42.9627820" lon="-78.8787350" version="2" timestamp="2009-09-22T14:49:15Z" changeset="2570051" uid="147510" user="woodpeck_fixbot"/>
      <node id="111295511" lat="42.9561570" lon="-78.8834110" version="2" timestamp="2009-09-07T16:46:54Z" changeset="2403751" uid="147510" user="woodpeck_fixbot"/>
      <node id="111295514" lat="42.9567050" lon="-78.8834150" version="2" timestamp="2009-09-22T14:49:15Z" changeset="2570051" uid="147510" user="woodpeck_fixbot"/>
-     <node id="111295520" lat="42.9513680" lon="-78.8814480" version="2" timestamp="2009-10-30T16:40:31Z" changeset="2990435" uid="147510" user="woodpeck_fixbot"/>
+     <node id="111295628" lat="42.9513680" lon="-78.8814480" version="2" timestamp="2009-10-30T16:40:31Z" changeset="2990435" uid="147510" user="woodpeck_fixbot"/>
      <node id="111295627" lat="42.8738630" lon="-78.8573530" version="2" timestamp="2009-09-22T14:49:16Z" changeset="2570051" uid="147510" user="woodpeck_fixbot"/>
 
 
   <way id="12287705" version="8" timestamp="2019-02-16T20:17:39Z" changeset="67262304" uid="8107451" user="njtbusfan">
-    <nd ref="111368949"/>
-    <nd ref="111368950"/>
-    <nd ref="111357943"/>
+    <nd ref="1"/>
+    <nd ref="2"/>
+    <nd ref="7"/>
+    <nd ref="9"/>
     <tag k="cycleway" v="shared_lane"/>
     <tag k="highway" v="residential"/>
     <tag k="maxspeed" v="30 mph"/>
@@ -31,9 +32,9 @@
     <tag k="tiger:zip_right" v="14213"/>
   </way>
   <way id="12287714" version="3" timestamp="2013-04-19T13:31:31Z" changeset="15785382" uid="451693" user="bot-mode">
-    <nd ref="111368949"/>
-    <nd ref="111368994"/>
-    <nd ref="1753209708"/>
+    <nd ref="1"/>
+    <nd ref="3"/>
+    <nd ref="9"/>
     <tag k="highway" v="residential"/>
     <tag k="name" v="High Park Boulevard"/>
     <tag k="oneway" v="yes"/>
@@ -46,9 +47,9 @@
     <tag k="tiger:zip_right" v="14226"/>
   </way>
   <way id="12287823" version="3" timestamp="2019-04-07T16:01:20Z" changeset="68979878" uid="348565" user="jdmonin">
-    <nd ref="111369952"/>
-    <nd ref="6389187381"/>
-    <nd ref="1753209708"/>
+    <nd ref="10"/>
+    <nd ref="10"/>
+    <nd ref="10"/>
     <tag k="highway" v="service"/>
     <tag k="name" v="Byrd Way"/>
     <tag k="tiger:cfcc" v="A41"/>
@@ -61,5 +62,39 @@
     <tag k="tiger:zip_right" v="14204"/>
     <tag k="tiger:zip_right_1" v="14204"/>
   </way>
+
+    <way id="12287823" version="3" timestamp="2019-04-07T16:01:20Z" changeset="68979878" uid="348565" user="jdmonin">
+      <nd ref="7"/>
+      <nd ref="5"/>
+      <tag k="highway" v="service"/>
+      <tag k="name" v="Byrd Way"/>
+      <tag k="tiger:cfcc" v="A41"/>
+      <tag k="tiger:county" v="Erie, NY"/>
+      <tag k="tiger:name_base" v="A"/>
+      <tag k="tiger:name_type" v="Way"/>
+      <tag k="tiger:reviewed" v="no"/>
+      <tag k="tiger:zip_left" v="14204"/>
+      <tag k="tiger:zip_left_1" v="14204"/>
+      <tag k="tiger:zip_right" v="14204"/>
+      <tag k="tiger:zip_right_1" v="14204"/>
+    </way>
+
+      <way id="12287823" version="3" timestamp="2019-04-07T16:01:20Z" changeset="68979878" uid="348565" user="jdmonin">
+        <nd ref="4"/>
+        <nd ref="5"/>
+        <nd ref="9"/>
+        <nd ref="9"/>
+        <tag k="highway" v="service"/>
+        <tag k="name" v="Byrd Way"/>
+        <tag k="tiger:cfcc" v="A41"/>
+        <tag k="tiger:county" v="Erie, NY"/>
+        <tag k="tiger:name_base" v="B"/>
+        <tag k="tiger:name_type" v="Way"/>
+        <tag k="tiger:reviewed" v="no"/>
+        <tag k="tiger:zip_left" v="14204"/>
+        <tag k="tiger:zip_left_1" v="14204"/>
+        <tag k="tiger:zip_right" v="14204"/>
+        <tag k="tiger:zip_right_1" v="14204"/>
+      </way>
 
   </osm>

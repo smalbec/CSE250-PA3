@@ -5,12 +5,16 @@
 
   <bounds minlat="42.8318000" minlon="-78.9197000" maxlat="42.9667000" maxlon="-78.7987000"/>
 
-<node id="111368949" lat="42.8774370" lon="-78.8663740" version="2" timestamp="2009-10-30T16:40:29Z" changeset="2990435" uid="147510" user="woodpeck_fixbot"/>
-     <node id="111368950" lat="42.8781384" lon="-78.8661583" version="3" timestamp="2010-03-10T01:25:02Z" changeset="4085929" uid="3962" user="RussNelson"/>
-     <node id="1753209708" lat="42.9627820" lon="-78.8787350" version="2" timestamp="2009-09-22T14:49:15Z" changeset="2570051" uid="147510" user="woodpeck_fixbot"/>
-     <node id="111295511" lat="42.9561570" lon="-78.8834110" version="2" timestamp="2009-09-07T16:46:54Z" changeset="2403751" uid="147510" user="woodpeck_fixbot"/>
-     <node id="111295514" lat="42.9567050" lon="-78.8834150" version="2" timestamp="2009-09-22T14:49:15Z" changeset="2570051" uid="147510" user="woodpeck_fixbot"/>
-     <node id="111295520" lat="42.9513680" lon="-78.8814480" version="2" timestamp="2009-10-30T16:40:31Z" changeset="2990435" uid="147510" user="woodpeck_fixbot"/>
-     <node id="111295627" lat="42.8738630" lon="-78.8573530" version="2" timestamp="2009-09-22T14:49:16Z" changeset="2570051" uid="147510" user="woodpeck_fixbot"/>
+<node id="10" lat="42.8774370" lon="-78.8663740" version="2" timestamp="2009-10-30T16:40:29Z" changeset="2990435" uid="147510" user="woodpeck_fixbot"/>
+     <node id="1" lat="42.8781384" lon="-78.8661583" version="3" timestamp="2010-03-10T01:25:02Z" changeset="4085929" uid="3962" user="RussNelson"/>
+     <node id="2" lat="42.9627820" lon="-78.8787350" version="2" timestamp="2009-09-22T14:49:15Z" changeset="2570051" uid="147510" user="woodpeck_fixbot"/>
+     <node id="3" lat="42.9561570" lon="-78.8834110" version="2" timestamp="2009-09-07T16:46:54Z" changeset="2403751" uid="147510" user="woodpeck_fixbot"/>
+     <node id="4" lat="42.9567050" lon="-78.8834150" version="2" timestamp="2009-09-22T14:49:15Z" changeset="2570051" uid="147510" user="woodpeck_fixbot"/>
+     <node id="5" lat="42.9513680" lon="-78.8814480" version="2" timestamp="2009-10-30T16:40:31Z" changeset="2990435" uid="147510" user="woodpeck_fixbot"/>
+     <node id="6" lat="42.8738630" lon="-78.8573530" version="2" timestamp="2009-09-22T14:49:16Z" changeset="2570051" uid="147510" user="woodpeck_fixbot"/>
+     <node id="7" lat="42.9513680" lon="-78.8814480" version="2" timestamp="2009-10-30T16:40:31Z" changeset="2990435" uid="147510" user="woodpeck_fixbot"/>
+     <node id="7" lat="42.9513680" lon="-78.8814480" version="2" timestamp="2009-10-30T16:40:31Z" changeset="2990435" uid="147510" user="woodpeck_fixbot"/>
+     <node id="7" lat="42.9513680" lon="-78.8814480" version="2" timestamp="2009-10-30T16:40:31Z" changeset="2990435" uid="147510" user="woodpeck_fixbot"/>
+     <node id="7" lat="42.9513680" lon="-78.8814480" version="2" timestamp="2009-10-30T16:40:31Z" changeset="2990435" uid="147510" user="woodpeck_fixbot"/>
 
 </osm>

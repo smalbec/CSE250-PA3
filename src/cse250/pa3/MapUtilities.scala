@@ -20,6 +20,7 @@ package cse250.pa3
 
 import cse250.objects.{StreetGraph, TaxEntry}
 
+import scala.util.control.Breaks._
 import scala.collection.mutable
 import scala.collection.mutable.{ArrayBuffer, ListBuffer, Map}
 import scala.xml.{NodeSeq, XML}
@@ -66,10 +67,10 @@ object   MapUtilities {
         }
         for(node <- nodes){
             if(returnMap.contains(node)){
-              returnMap(node) = (returnMap(node) + name)
+              returnMap(node) = (returnMap(node) + name.toUpperCase())
             }
             else{
-              returnMap += (node -> mutable.Set(name))
+              returnMap += (node -> mutable.Set(name.toUpperCase()))
             }
           }
         }
@@ -123,7 +124,90 @@ object   MapUtilities {
     val cur = start.infoMap("STREET")
     val dest = end.infoMap("STREET")
 
+    if(!streetGraph.vertices.contains(cur) || !streetGraph.vertices.contains(dest)){
+      return -1
+    }
+
+
     var pathCount = 0
+    var prevSize = 1
+    var curSize = 1
+    var distance = 1
+    var ogcurSize = curSize
+
+
+
+    var map: mutable.Map[Int, mutable.Set[String]] = mutable.Map(0-> mutable.Set(cur))
+
+    if(cur == dest){
+      return pathCount
+    }
+
+    var size = 1000
+
+    var queue: mutable.Queue[String] = mutable.Queue()
+    var visit = Set(cur)
+    queue.enqueue(cur)
+
+    var set = mutable.Set.empty[String]
+
+    while(queue.nonEmpty){
+      val current = queue.dequeue()
+      val neighbors = streetGraph.vertices(current).edges
+
+
+      if(curSize == 0){
+        map += (distance -> set)
+        prevSize += -1
+        curSize = neighbors.size
+      }
+      if(prevSize == 0){
+        distance += 1
+        prevSize = ogcurSize
+        set = mutable.Set.empty
+      }
+
+
+      curSize = neighbors.size
+      ogcurSize = neighbors.size
+
+        for(edge<- neighbors){
+          set += edge.name
+          curSize += -1
+          size += -1
+            if(!visit.contains(edge.name)){
+              if(edge.name == dest){
+                return pathCount + 1
+              }
+            queue.enqueue((edge.name))
+            visit += edge.name
+          }
+        }
+        pathCount += 1
+    }
+    -1
+  }
+
+  def computeFewestTurnsList(streetGraph: StreetGraph, start: TaxEntry, end: TaxEntry): Seq[String] = {
+    val cur = start.infoMap("STREET")
+    val dest = end.infoMap("STREET")
+
+    if(!streetGraph.vertices.contains(cur) || !streetGraph.vertices.contains(dest)){
+      return Seq()
+    }
+
+    var vertexDistance =  mutable.Map(0 -> mutable.Set(cur))
+
+    var index = 1
+
+    var shortestPath = Seq(cur)
+
+
+
+
+    if(cur == dest){
+      return List(cur)
+    }
 
     var queue: mutable.Queue[String] = mutable.Queue()
     var visit = Set(cur)
@@ -131,23 +215,60 @@ object   MapUtilities {
 
     while(queue.nonEmpty){
       val current = queue.dequeue()
-      if(current == dest){
-        return pathCount
-      }
-      else{
-        val neighbors = streetGraph.vertices(cur).edges
-        for(edge<- neighbors){
-            if(!visit.contains(edge.name)){
-            queue.enqueue((edge.name))
-            visit += edge.name
-          }
+      val neighbors = streetGraph.vertices(current).edges
+     (vertexDistance += (index -> mutable.Set()))
+
+      for(edge<- neighbors){
+        if(!visit.contains(edge.name)){
+//          if(edge.name == dest){
+//
+//          }
+          queue.enqueue((edge.name))
+          visit += edge.name
+          vertexDistance(index) = vertexDistance(index) + edge.name
         }
       }
+      index +=1
     }
-    pathCount
-  }
 
-  def computeFewestTurnsList(streetGraph: StreetGraph, start: TaxEntry, end: TaxEntry): Seq[String] = {
-    List()
+    var seq = vertexDistance.toSeq.reverse
+
+    var reverseQueue: mutable.Queue[String] = mutable.Queue()
+    reverseQueue.enqueue(dest)
+
+    var path :Seq[String] = Seq(dest)
+
+    var length = 2
+
+    breakable {while(reverseQueue.nonEmpty) {
+      val current = reverseQueue.dequeue()
+      val neighbors = streetGraph.vertices(current).edges
+
+      for(edge<- neighbors){
+        if(seq(length)._2.contains(edge.name)){
+          breakable {for(i<-seq(length)._2){
+            if(i == edge.name){
+              path = path :+ i
+              reverseQueue.enqueue(edge.name)
+              length += 1
+            if(i == cur) {
+              return path.reverse
+            }
+              break
+            }
+          }}
+        }
+      }
+
+
+      //path += current
+
+    }}
+    //val neighbors = streetGraph.vertices(current).edges
+
+
+
+
+    Seq()
   }
 }

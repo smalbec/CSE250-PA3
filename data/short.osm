@@ -2,20 +2,80 @@
 <note>The data included in this document is from www.openstreetmap.org. The data is made available under ODbL.</note>
 <meta osm_base="2019-10-25T03:33:02Z"/>
 
-  <node id="111296042" lat="42.8309570" lon="-78.8492830"/>
-  <node id="111296048" lat="42.8316410" lon="-78.8468080"/>
-  <node id="279658800" lat="42.8331645" lon="-78.8529137"/>
-  <node id="354586177" lat="42.8337992" lon="-78.8538948"/>
-  <node id="1775731412" lat="42.8393191" lon="-78.8560552"/>
-  <node id="1775731433" lat="42.8393798" lon="-78.8560014"/>
-  <node id="1775735016" lat="42.8363964" lon="-78.8551733">
-    <tag k="highway" v="motorway_junction"/>
-    <tag k="noref" v="yes"/>
-  </node>
-  <node id="353924530" lat="42.8279931" lon="-78.8508791"/>
-  <node id="1015434034" lat="42.8320447" lon="-78.8530174">
-    <tag k="highway" v="motorway_junction"/>
-    <tag k="noref" v="yes"/>
-  </node>
-  <node id="111338702" lat="42.8314829" lon="-78.8525750"/>
+    <way id="12305612" version="4" timestamp="2014-01-15T12:51:43Z" changeset="20013476" uid="33321" user="qwerty10">
+      <nd ref="111513242"/>
+      <nd ref="111528165"/>
+      <nd ref="111528169"/>
+      <nd ref="111528172"/>
+      <nd ref="111528179"/>
+      <nd ref="111528181"/>
+      <nd ref="111528185"/>
+      <nd ref="111528188"/>
+      <nd ref="111528190"/>
+      <nd ref="111528196"/>
+      <tag k="highway" v="residential"/>
+      <tag k="name" v="Msgr Valente Drive"/>
+      <tag k="tiger:cfcc" v="A41"/>
+      <tag k="tiger:county" v="Erie, NY"/>
+      <tag k="tiger:name_base" v="Msgr Valente"/>
+      <tag k="tiger:name_type" v="Dr"/>
+      <tag k="tiger:zip_left" v="14206"/>
+      <tag k="tiger:zip_right" v="14206"/>
+    </way>
+
+      <way id="12315367" version="12" timestamp="2018-11-26T16:35:58Z" changeset="64904112" uid="7876022" user="Julie Fetzer">
+        <nd ref="111513242"/>
+        <nd ref="111458700"/>
+        <nd ref="111354377"/>
+        <nd ref="111340649"/>
+        <nd ref="111502669"/>
+        <nd ref="111349540"/>
+        <nd ref="111444070"/>
+        <nd ref="111285850"/>
+        <nd ref="111413972"/>
+        <nd ref="111462506"/>
+        <nd ref="111404084"/>
+        <nd ref="111413274"/>
+        <nd ref="111504089"/>
+        <nd ref="111612544"/>
+        <nd ref="111519367"/>
+        <nd ref="111612547"/>
+        <nd ref="111427141"/>
+        <nd ref="111365996"/>
+        <tag k="highway" v="secondary"/>
+        <tag k="maxspeed" v="30 mph"/>
+        <tag k="name" v="William Street"/>
+        <tag k="tiger:cfcc" v="A41"/>
+        <tag k="tiger:county" v="Erie, NY"/>
+        <tag k="tiger:name_base" v="William"/>
+        <tag k="tiger:name_type" v="St"/>
+        <tag k="tiger:reviewed" v="no"/>
+        <tag k="tiger:zip_left" v="14206"/>
+        <tag k="tiger:zip_right" v="14206"/>
+      </way>
+
+        <way id="12303890" version="4" timestamp="2015-12-10T02:27:31Z" changeset="35857848" uid="599436" user="zeromap">
+          <nd ref="111453652"/>
+          <nd ref="111513219"/>
+          <nd ref="111513223"/>
+          <nd ref="111513229"/>
+          <nd ref="111345547"/>
+          <nd ref="111513234"/>
+          <nd ref="111504709"/>
+          <nd ref="111513237"/>
+          <nd ref="111503579"/>
+          <nd ref="111513239"/>
+          <nd ref="111513242"/>
+          <tag k="highway" v="residential"/>
+          <tag k="maxspeed" v="30 mph"/>
+          <tag k="name" v="New Babcock Street"/>
+          <tag k="tiger:cfcc" v="A41"/>
+          <tag k="tiger:county" v="Erie, NY"/>
+          <tag k="tiger:name_base" v="New Babcock"/>
+          <tag k="tiger:name_type" v="St"/>
+          <tag k="tiger:reviewed" v="no"/>
+          <tag k="tiger:zip_left" v="14206"/>
+          <tag k="tiger:zip_right" v="14206"/>
+        </way>
+
 </osm>
