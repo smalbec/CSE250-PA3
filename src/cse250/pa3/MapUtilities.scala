@@ -130,6 +130,7 @@ object   MapUtilities {
 
 
     var pathCount = 0
+    var edges = 0
     var prevSize = 1
     var curSize = 1
     var distance = 1
@@ -146,38 +147,78 @@ object   MapUtilities {
     var size = 1000
 
     var queue: mutable.Queue[String] = mutable.Queue()
+
+    var distQueue: mutable.Queue[String] = mutable.Queue()
+
+    distQueue.enqueue(cur)
+
+    var arr=  ArrayBuffer
+
+    var visit2 = Set(cur)
+
+    while(distQueue.nonEmpty){
+      val current = queue.dequeue()
+      val neighbors = streetGraph.vertices(current).edges
+
+
+
+      curSize = neighbors.size
+
+      for(edge<- neighbors){
+        if(!visit2.contains(edge.name)){
+          if(edge.name == dest){
+            return distance
+          }
+          queue.enqueue((edge.name))
+          visit2 += edge.name
+        }
+      }
+      pathCount += 1
+    }
+
     var visit = Set(cur)
     queue.enqueue(cur)
 
+    var first = true
+
     var set = mutable.Set.empty[String]
+
+    var second = false
 
     while(queue.nonEmpty){
       val current = queue.dequeue()
       val neighbors = streetGraph.vertices(current).edges
 
-
-      if(curSize == 0){
-        map += (distance -> set)
-        prevSize += -1
-        curSize = neighbors.size
+      if(second){
+        edges = 0
+        prevSize = ogcurSize
+        second = false
       }
+
+      if(first){
+        ogcurSize = neighbors.size
+        prevSize = neighbors.size
+        first = false
+        second = true
+      }
+
       if(prevSize == 0){
         distance += 1
-        prevSize = ogcurSize
+        prevSize = edges
         set = mutable.Set.empty
+        edges = 0
       }
 
-
+      prevSize -= 1
       curSize = neighbors.size
-      ogcurSize = neighbors.size
 
         for(edge<- neighbors){
-          set += edge.name
-          curSize += -1
-          size += -1
             if(!visit.contains(edge.name)){
+              edges += 1
+              set += edge.name
+              curSize += -1
               if(edge.name == dest){
-                return pathCount + 1
+                return distance
               }
             queue.enqueue((edge.name))
             visit += edge.name
